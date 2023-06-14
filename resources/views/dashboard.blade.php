@@ -1,8 +1,8 @@
-<x-app-layout>
-    <x-slot name="header">
+<x-admin-layout>
+    <x-slot name="title">
         {{ __('Dashboard') }}
     </x-slot>
-    <div class="container">
+    <div class="container bg-white py-3">
         <div class="row">
             <div class="col-12">
                 {{ __("You're logged in!") }}
@@ -25,4 +25,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-admin-layout>
