@@ -39,12 +39,50 @@
               <div class="bg-white py-2 collapse-inner rounded">
                   <h6 class="collapse-header">Profile:</h6>
                   <a class="collapse-item" href="{{ route('profile.edit') }}">Profile</a>
-                  {{-- <a class="collapse-item" href="{{ route('kriteria.index') }}">Kriteria</a> --}}
-                  {{-- <a class="collapse-item" href="{{ route('langkah.perhitungan.index') }}">Langkah Perhitungan</a> --}}
+              </div>
+          </div>
+      </li>
+      <!-- Heading -->
+      <div class="sidebar-heading">
+          Data Master
+      </div>
+      <li class="nav-item">
+          <a class="nav-link {{ request()->segment(1) == 'data-master' ? '' : 'collapsed' }}" href="#"
+              data-toggle="collapse" data-target="#data-master" aria-expanded="true" aria-controls="data-master">
+              <i class="fa-solid fa-server"></i>
+              <span>Data Master</span>
+          </a>
+          <div id="data-master" class="{{ request()->segment(1) == 'data-master' ? 'collapse show' : 'collapse' }}"
+              aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner" style="border-right: 2px solid slategray">
+                  <a class="{{ request()->segment(2) == 'sayuran' ? 'active' : '' }}  collapse-item"
+                      href="{{ route('sayuran.index') }}">Data Sayuran</a>
+                  <a class="{{ request()->segment(2) == 'kriteria-lahan' ? 'active' : '' }}  collapse-item"
+                      href="{{ route('kriteriaLahan.index') }}">Data kriteria lahan</a>
+                  <a class="{{ request()->segment(2) == 'rules' ? 'active' : '' }}  collapse-item"
+                      href="{{ route('rules.index') }}">Data Rules</a>
               </div>
           </div>
       </li>
 
+
+      <div class="sidebar-heading">
+          Data Analisis
+      </div>
+      <li class="nav-item">
+          <a class="nav-link {{ request()->segment(1) == 'analisis' ? '' : 'collapsed' }}" href="#"
+              data-toggle="collapse" data-target="#analisis" aria-expanded="true" aria-controls="analisis">
+              <i class="fa-solid fa-server"></i>
+              <span>analisis</span>
+          </a>
+          <div id="analisis" class="{{ request()->segment(1) == 'analisis' ? 'collapse show' : 'collapse' }}"
+              aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+              <div class="bg-white py-2 collapse-inner" style="border-right: 2px solid slategray">
+                  <a class="{{ request()->segment(2) == 'konsultasi' ? 'active' : '' }}  collapse-item"
+                      href="{{ route('konsultasi.index') }}">Konsultasi</a>
+              </div>
+          </div>
+      </li>
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
           <button class="rounded-circle border-0" id="sidebarToggle"></button>
